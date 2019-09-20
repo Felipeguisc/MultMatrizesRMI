@@ -19,7 +19,7 @@ public class MultiplicacaoMatrizServer {
 			
 			//Registra o Objeto no RMI Registry
 			System.out.println("\tRegistrando objeto no rmi registry...");
-			Naming.rebind("MultiplicaMAtriz", calc);
+			Naming.rebind("MultiplicaMatriz", calc);
 			
 			System.out.println("Aguardando requisicoes...");
 		} catch (RemoteException | MalformedURLException e) {
