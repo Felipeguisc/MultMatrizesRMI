@@ -2,11 +2,12 @@ package mult_matriz_server_rmi;
 
 import java.net.MalformedURLException;
 import java.rmi.Naming;
+import java.rmi.NotBoundException;
 import java.rmi.RemoteException;
 
 public class MultiplicacaoMatrizServer {
 	
-	public static void main(String[] args) {
+	public static void main(String[] args) throws NotBoundException {
 		System.out.println("\nIniciando servidor mult_matriz...");
 		
 		try {
@@ -22,8 +23,9 @@ public class MultiplicacaoMatrizServer {
 			Naming.rebind("MultiplicaMatriz", calc);
 			
 			System.out.println("Aguardando requisicoes...");
-		} catch (RemoteException | MalformedURLException e) {
-			
+		} catch (MalformedURLException | RemoteException e) {
+			System.err.print("\n\tErro: " + e.getMessage());
+			System.exit(1);
 		}
 	}
 
