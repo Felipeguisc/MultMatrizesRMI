@@ -1,4 +1,4 @@
-package mult_matriz_client_rmi;
+package mult_matriz;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
@@ -38,8 +38,10 @@ public class MultiplicacaoMatrizClient {
 			System.setSecurityManager(new SecurityManager());
 
 			calc = (MultiplicaMatrizInterface)Naming.lookup("rmi://localhost:1099/MultiplicaMatriz");
+			
+			linha = calc.multLinha(linha_a, matB);
 
-			System.out.print("\n\tRESULTADO => " + calc.multLinha(linha_a, matB));
+			System.out.print("\n\tRESULTADO => " + linha[0] + " " + linha[1]);
 
 		} catch (MalformedURLException | RemoteException | NotBoundException e) {
 			System.err.print("\n\tErro: " + e.getMessage());

@@ -1,4 +1,4 @@
-package mult_matriz_server_rmi;
+package mult_matriz;
 
 import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;

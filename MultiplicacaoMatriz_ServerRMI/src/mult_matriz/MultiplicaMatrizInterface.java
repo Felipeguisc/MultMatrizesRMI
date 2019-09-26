@@ -1,4 +1,4 @@
-package mult_matriz_client_rmi;
+package mult_matriz;
 
 import java.rmi.Remote;
 import java.rmi.RemoteException;
