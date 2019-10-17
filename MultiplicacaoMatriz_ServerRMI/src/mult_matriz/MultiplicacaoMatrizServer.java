@@ -20,7 +20,8 @@ public class MultiplicacaoMatrizServer {
 			
 			//Registra o Objeto no RMI Registry
 			System.out.println("\tRegistrando objeto no rmi registry...");
-			Naming.rebind("MultiplicaMatriz", calc);
+			System.setProperty("java.rmi.server.hostname", "10.151.33.114");
+			Naming.rebind("rmi://localhost:1099/MultiplicaMatriz", calc);
 			
 			System.out.println("Aguardando requisicoes...");
 		} catch (MalformedURLException | RemoteException e) {
