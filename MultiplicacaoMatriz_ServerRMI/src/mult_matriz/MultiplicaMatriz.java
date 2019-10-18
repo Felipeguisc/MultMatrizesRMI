@@ -7,12 +7,19 @@ public class MultiplicaMatriz extends UnicastRemoteObject implements MultiplicaM
 
 	private static final long serialVersionUID = 1L;
 	private long[] linha_c;
+	private long[][] matB;
 
 	public MultiplicaMatriz() throws RemoteException {
 	};
+	
+	@Override
+	public void defineMatB(long[][] matB, int lin) throws RemoteException {
+		this.matB = new long[lin][lin];
+		this.matB = matB;
+	}
 
 	@Override
-	public long[] multLinha(long[] linha_a, long[][] matB) throws RemoteException {
+	public long[] multLinha(long[] linha_a) throws RemoteException {
 		int size = matB.length;
 		linha_c = new long[size];
 		int k = 0;
